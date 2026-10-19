@@ -1,0 +1,18 @@
+import random
+
+def coin_toss_simulate(total_times):
+    head = 0  # 正面
+    tail = 0  # 反面
+    for _ in range(total_times):
+        res = random.choice(["正面", "反面"])
+        if res == "正面":
+            head +=1
+        else:
+            tail +=1
+    print(f"总投掷次数: {total_times}")
+    print(f"正面次数: {head}，概率：{head/total_times:.4f}")
+    print(f"反面次数: {tail}，概率：{tail/total_times:.4f}")
+
+if __name__ == "__main__":
+    times = int(input("请输入模拟投掷硬币次数："))
+    coin_toss_simulate(times)
